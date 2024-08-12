@@ -15,7 +15,7 @@ Shader "Custom/My First Lighting Shader" {
 			#pragma vertex MyVertexProgram
 			#pragma fragment MyFragmentProgram
 
-			#include "UnityCG.cginc"
+			#include "UnityStandardBRDF.cginc"
 
 			float4 _Tint;
 			sampler2D _MainTex;
@@ -24,10 +24,12 @@ Shader "Custom/My First Lighting Shader" {
 			struct Interpolators {
 				float4 position : SV_POSITION;
 				float2 uv : TEXCOORD0;
+				float3 normal : TEXCOORD1;
 				};
 
 			struct VertexData {
 				float4 position : POSITION;
+				float3 normal : NORMAL;
 				float2 uv : TEXCOORD0;
 				};
 
@@ -36,6 +38,8 @@ Shader "Custom/My First Lighting Shader" {
 				) {
 					Interpolators i;
 					i.position = UnityObjectToClipPos(v.position);
+					i.normal = UnityObjectToWorldNormal(v.normal);
+					i.normal = normalize(i.normal);
 					i.uv = TRANSFORM_TEX(v.uv, _MainTex);
 					return i;
 				}
@@ -43,7 +47,8 @@ Shader "Custom/My First Lighting Shader" {
 			float4 MyFragmentProgram (
 				Interpolators i
 				) : SV_TARGET {
-					return tex2D(_MainTex, i.uv) * _Tint;
+					i.normal = normalize(i.normal);
+					return DotClamped(float3(0, 1, 0), i.normal);
 				}
 
 			ENDCG
