@@ -5,11 +5,15 @@
 Shader "Custom/My First Lighting Shader" {
 	Properties {
 		_Tint ("Tint", Color) = (1,1,1,1)
-		_MainTex ("Texture", 2D) = "white" {}
+		_MainTex ("Albedo", 2D) = "white" {}
 		}
 
 	SubShader {
 		Pass {
+			Tags {
+				"LightMode" = "ForwardBase"
+				}
+
 			CGPROGRAM
 
 			#pragma vertex MyVertexProgram
@@ -48,7 +52,11 @@ Shader "Custom/My First Lighting Shader" {
 				Interpolators i
 				) : SV_TARGET {
 					i.normal = normalize(i.normal);
-					return DotClamped(float3(0, 1, 0), i.normal);
+					float3 lightDir = _WorldSpaceLightPos0.xyz;
+					float3 lightColor = _LightColor0.rgb;
+					float3 albedo = tex2D(_MainTex, i.uv).rgb * _Tint.rgb;
+					float3 diffuse = albedo * lightColor * DotClamped(lightDir, i.normal);
+					return float4(diffuse, 1);
 				}
 
 			ENDCG
