@@ -15,7 +15,7 @@ C:/Users/yangnj/Learning Shaders
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53044
+52868
 Successfully changed project path to: C:/Users/yangnj/Learning Shaders
 C:/Users/yangnj/Learning Shaders
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,16 +49,16 @@ C:/Users/yangnj/Learning Shaders
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [22376]  Target information:
+Player connection [19088]  Target information:
 
-Player connection [22376]  * "[IP] 172.23.176.1 [Port] 0 [Flags] 2 [Guid] 207272085 [EditorId] 207272085 [Version] 1048832 [Id] WindowsEditor(7,RHIT-PW01EG73) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19088]  * "[IP] 172.23.176.1 [Port] 0 [Flags] 2 [Guid] 2269964119 [EditorId] 2269964119 [Version] 1048832 [Id] WindowsEditor(7,RHIT-PW01EG73) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [22376]  * "[IP] 192.168.1.24 [Port] 0 [Flags] 2 [Guid] 207272085 [EditorId] 207272085 [Version] 1048832 [Id] WindowsEditor(7,RHIT-PW01EG73) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19088]  * "[IP] 192.168.1.24 [Port] 0 [Flags] 2 [Guid] 2269964119 [EditorId] 2269964119 [Version] 1048832 [Id] WindowsEditor(7,RHIT-PW01EG73) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [22376] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [22376] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19088] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19088] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 387.23 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 7242.51 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.38f1 (c5d5a7410213)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.38f1/Editor/Data/Resources/UnitySubsystems
@@ -74,44 +74,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.38f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.38f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.38f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56820
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56768
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.38f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.120773 seconds.
-- Loaded All Assemblies, in 16.289 seconds
+Registered in 0.879389 seconds.
+- Loaded All Assemblies, in 28.669 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.475 seconds
-Domain Reload Profiling: 17749ms
-	BeginReloadAssembly (11766ms)
+- Finished resetting the current domain, in  1.404 seconds
+Domain Reload Profiling: 30055ms
+	BeginReloadAssembly (20613ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (3ms)
-	RebuildCommonClasses (2013ms)
-	RebuildNativeTypeToScriptingClass (59ms)
-	initialDomainReloadingComplete (407ms)
-	LoadAllAssembliesAndSetupDomain (2027ms)
-		LoadAssemblies (11748ms)
+		CreateAndSetChildDomain (4ms)
+	RebuildCommonClasses (1985ms)
+	RebuildNativeTypeToScriptingClass (39ms)
+	initialDomainReloadingComplete (1183ms)
+	LoadAllAssembliesAndSetupDomain (4829ms)
+		LoadAssemblies (20597ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (2020ms)
-			TypeCache.Refresh (2015ms)
-				TypeCache.ScanAssembly (1945ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
+		AnalyzeDomain (4819ms)
+			TypeCache.Refresh (4813ms)
+				TypeCache.ScanAssembly (3491ms)
+			ScanForSourceGeneratedMonoScriptInfo (2ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (1477ms)
+	FinalizeReload (1406ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1176ms)
+		SetupLoadedEditorAssemblies (1108ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (84ms)
-			SetLoadedEditorAssemblies (39ms)
+			InitializePlatformSupportModulesInManaged (91ms)
+			SetLoadedEditorAssemblies (36ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (11ms)
-			ProcessInitializeOnLoadAttributes (783ms)
-			ProcessInitializeOnLoadMethodAttributes (258ms)
+			BeforeProcessingInitializeOnLoad (10ms)
+			ProcessInitializeOnLoadAttributes (745ms)
+			ProcessInitializeOnLoadMethodAttributes (226ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -119,55 +119,55 @@ Domain Reload Profiling: 17749ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.645 seconds
-Refreshing native plugins compatible for Editor in 38.14 ms, found 3 plugins.
+- Loaded All Assemblies, in 27.305 seconds
+Refreshing native plugins compatible for Editor in 46.51 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.965 seconds
-Domain Reload Profiling: 5595ms
-	BeginReloadAssembly (613ms)
+- Finished resetting the current domain, in  3.132 seconds
+Domain Reload Profiling: 30412ms
+	BeginReloadAssembly (734ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (23ms)
+		DisableScriptedObjects (26ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (84ms)
-	RebuildCommonClasses (143ms)
-	RebuildNativeTypeToScriptingClass (38ms)
-	initialDomainReloadingComplete (194ms)
-	LoadAllAssembliesAndSetupDomain (1640ms)
-		LoadAssemblies (1175ms)
+		CreateAndSetChildDomain (87ms)
+	RebuildCommonClasses (169ms)
+	RebuildNativeTypeToScriptingClass (49ms)
+	initialDomainReloadingComplete (280ms)
+	LoadAllAssembliesAndSetupDomain (26045ms)
+		LoadAssemblies (23477ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (818ms)
-			TypeCache.Refresh (710ms)
-				TypeCache.ScanAssembly (643ms)
-			ScanForSourceGeneratedMonoScriptInfo (79ms)
-			ResolveRequiredComponents (25ms)
-	FinalizeReload (2968ms)
+		AnalyzeDomain (2998ms)
+			TypeCache.Refresh (2877ms)
+				TypeCache.ScanAssembly (2594ms)
+			ScanForSourceGeneratedMonoScriptInfo (83ms)
+			ResolveRequiredComponents (32ms)
+	FinalizeReload (3134ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2204ms)
+		SetupLoadedEditorAssemblies (2385ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (67ms)
-			SetLoadedEditorAssemblies (22ms)
+			InitializePlatformSupportModulesInManaged (66ms)
+			SetLoadedEditorAssemblies (20ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (378ms)
-			ProcessInitializeOnLoadAttributes (1548ms)
-			ProcessInitializeOnLoadMethodAttributes (104ms)
-			AfterProcessingInitializeOnLoad (85ms)
-			EditorAssembliesLoaded (0ms)
+			BeforeProcessingInitializeOnLoad (398ms)
+			ProcessInitializeOnLoadAttributes (1697ms)
+			ProcessInitializeOnLoadMethodAttributes (107ms)
+			AfterProcessingInitializeOnLoad (97ms)
+			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (34ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.27 seconds
-Refreshing native plugins compatible for Editor in 35.85 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (31ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.38 seconds
+Refreshing native plugins compatible for Editor in 43.37 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (57.9 KB). Loaded Objects now: 3607.
-Memory consumption went from 121.6 MB to 121.5 MB.
-Total: 11.486400 ms (FindLiveObjects: 1.013500 ms CreateObjectMapping: 0.400700 ms MarkObjects: 9.702600 ms  DeleteObjects: 0.365600 ms)
+Unloading 33 unused Assets / (57.7 KB). Loaded Objects now: 3607.
+Memory consumption went from 121.6 MB to 121.6 MB.
+Total: 13.215500 ms (FindLiveObjects: 0.636600 ms CreateObjectMapping: 0.327300 ms MarkObjects: 11.896500 ms  DeleteObjects: 0.350900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -185,46 +185,73 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 772950.495591 seconds.
+  Time since last request: 953358.121633 seconds.
   path: Assets/Shaders/LightingShader.shader
   artifactKey: Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Shaders/LightingShader.shader using Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7e03d45b63aeb99f405c4ba99ef0a0cd') in 0.046520 seconds
+ -> (artifact id: 'dbca242e20b1b6aa9ab466f834dda9b3') in 0.051585 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 24.035629 seconds.
-  path: Assets/Shaders/LightingShader.shader
-  artifactKey: Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/LightingShader.shader using Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ec7b2d65ffa6bebd74dd015bdd3a4c60') in 0.003316 seconds
+  Time since last request: 859.102837 seconds.
+  path: Assets/Shaders/My Lighting.cginc
+  artifactKey: Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/My Lighting.cginc using Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4d00cfc2978ad3d26d97746b0a536fb9') in 0.009902 seconds
 Number of updated asset objects reloaded before import = 1
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 34.341804 seconds.
-  path: Assets/Shaders/LightingShader.shader
-  artifactKey: Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/LightingShader.shader using Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '92b226e2e669472d340eb4e95cc2a5bf') in 0.003290 seconds
+  Time since last request: 28.010296 seconds.
+  path: Assets/Shaders/My Lighting.cginc
+  artifactKey: Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/My Lighting.cginc using Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '38b2b1aeee1e4343c60762a1983ec9ca') in 0.004150 seconds
 Number of updated asset objects reloaded before import = 1
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 48.487042 seconds.
-  path: Assets/Shaders/LightingShader.shader
-  artifactKey: Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/LightingShader.shader using Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '8ae11d61518974ac3a75d0d6f128b455') in 0.002543 seconds
+  Time since last request: 10.226295 seconds.
+  path: Assets/Shaders/My Lighting.cginc
+  artifactKey: Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/My Lighting.cginc using Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '27b7a5cfa56394c6e14b426a71c094ae') in 0.003022 seconds
 Number of updated asset objects reloaded before import = 1
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 117.236488 seconds.
-  path: Assets/Shaders/LightingShader.shader
-  artifactKey: Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/LightingShader.shader using Guid(3b12183e18def34458a8095b75a42e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '592962075227b1897eedcc9a5346d0b4') in 0.004275 seconds
+  Time since last request: 293.395117 seconds.
+  path: Assets/Shaders/My Lighting.cginc
+  artifactKey: Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/My Lighting.cginc using Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '445c55822f0b1466bd53054196da036b') in 0.007706 seconds
 Number of updated asset objects reloaded before import = 1
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 7.263711 seconds.
+  path: Assets/Shaders/My Lighting.cginc
+  artifactKey: Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/My Lighting.cginc using Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '54c0c34d3a43ad2884261a990edc294d') in 0.003131 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 67.915065 seconds.
+  path: Assets/Shaders/My Lighting.cginc
+  artifactKey: Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/My Lighting.cginc using Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '54c3df08db035c9c6b52f73131c39f7e') in 0.002692 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 362.025988 seconds.
+  path: Assets/Shaders/My Lighting.cginc
+  artifactKey: Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/My Lighting.cginc using Guid(38b66b192182730478ddb14fb8a54d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ff752ef03e4ba85ef4719dfa69dd1f41') in 0.006365 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1

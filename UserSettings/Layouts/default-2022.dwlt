@@ -359,7 +359,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Shaders
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -367,16 +367,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Shaders
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\yangnj\Learning Shaders
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8c5a0000
-    m_LastClickedID: 23180
-    m_ExpandedIDs: 000000007a5a000000ca9a3b
+    m_SelectedIDs: 965a0000
+    m_LastClickedID: 23190
+    m_ExpandedIDs: 00000000805a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -404,7 +404,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007a5a0000
+    m_ExpandedIDs: 00000000805a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.024300072, y: 0.94844824, z: -0.30695462, w: -0.07508376}
     speed: 2
-    m_Value: {x: -0.0271452, y: 0.94742537, z: -0.30767056, w: -0.083589405}
+    m_Value: {x: -0.02430007, y: 0.94844824, z: -0.3069546, w: -0.07508376}
   m_Size:
     m_Target: 16.753805
     speed: 2
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0

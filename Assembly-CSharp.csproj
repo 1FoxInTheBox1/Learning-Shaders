@@ -70,6 +70,7 @@
   <ItemGroup>
     <None Include="Assets\Shaders\TexturedWithDetail.shader" />
     <None Include="Assets\Shaders\FirstShader.shader" />
+    <None Include="Assets\Shaders\My Lighting.cginc" />
     <None Include="Assets\Shaders\LightingShader.shader" />
     <None Include="Assets\Shaders\SplattingTexture.shader" />
   </ItemGroup>
