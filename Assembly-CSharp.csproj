@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\RotationTransformation.cs" />
     <Compile Include="Assets\Scripts\Transformation.cs" />
     <Compile Include="Assets\Scripts\PositionTransformation.cs" />
+    <Compile Include="Assets\Scripts\TangentSpaceVisualizer.cs" />
     <Compile Include="Assets\Scripts\TransformationGrid.cs" />
     <Compile Include="Assets\Scripts\ScalingTransformation.cs" />
     <Compile Include="Assets\Scripts\CameraTransformation.cs" />

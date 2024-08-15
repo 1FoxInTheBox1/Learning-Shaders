@@ -360,6 +360,7 @@
 "Assets/Scripts/PositionTransformation.cs"
 "Assets/Scripts/RotationTransformation.cs"
 "Assets/Scripts/ScalingTransformation.cs"
+"Assets/Scripts/TangentSpaceVisualizer.cs"
 "Assets/Scripts/Transformation.cs"
 "Assets/Scripts/TransformationGrid.cs"
 -langversion:9.0
