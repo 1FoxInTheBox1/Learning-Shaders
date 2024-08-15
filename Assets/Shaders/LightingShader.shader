@@ -6,6 +6,9 @@ Shader "Custom/My First Lighting Shader" {
 		_BumpScale ("Bump Scale", Float) = 1
 		[Gamma] _Metallic ("Metallic", Range(0,1)) = 0
 		_Smoothness ("Smoothness", Range(0, 1)) = 0.5
+		_DetailTex ("Detail Texture", 2D) = "gray" {}
+		[NoScaleOffset] _DetailNormalMap ("Detail Normals", 2D) = "bumb" {}
+		_DetailBumpScale ("Detail Bump Scale", Float) = 1
 		}
 
 	SubShader {
