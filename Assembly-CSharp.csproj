@@ -70,11 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\TexturedWithDetail.shader" />
-    <None Include="Assets\Shaders\FirstShader.shader" />
     <None Include="Assets\Shaders\My Lighting.cginc" />
-    <None Include="Assets\Shaders\My Shadows.cginc" />
+    <None Include="Assets\Shaders\FirstShader.shader" />
     <None Include="Assets\Shaders\LightingShader.shader" />
     <None Include="Assets\Shaders\SplattingTexture.shader" />
+    <None Include="Assets\Shaders\My Shadows.cginc" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
