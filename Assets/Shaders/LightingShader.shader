@@ -27,6 +27,7 @@ Shader "Custom/My First Lighting Shader" {
 
 			#pragma target 3.0
 
+			#pragma multi_compile _ SHADOWS_SCREEN
 			#pragma multi_compile _ VERTEXLIGHT_ON
 
 			#pragma vertex MyVertexProgram
@@ -50,7 +51,7 @@ Shader "Custom/My First Lighting Shader" {
 
 			#pragma target 3.0
 
-			#pragma multi_compile_fwdadd
+			#pragma multi_compile_fwdadd_fullshadows
 
 			#pragma vertex MyVertexProgram
 			#pragma fragment MyFragmentProgram
