@@ -107,8 +107,10 @@ UnityIndirect CreateIndirectLight (Interpolators i, float3 viewDir) {
 	#if defined(FORWARD_BASE_PASS)
 		indirectLight.diffuse += max(0, ShadeSH9(float4(i.normal, 1)));
 		float3 reflectionDir = reflect(-viewDir, i.normal);
-		float4 envSample = UNITY_SAMPLE_TEXCUBE(unity_SpecCube0, reflectionDir);
-		indirectLight.specular = DecodeHDR(envSample, unity_SpecCube0_HDR);
+		Unity_GlossyEnvironmentData envData;
+		envData.roughness = 1 - _Smoothness;
+		envData.reflUVW = reflectionDir;
+		indirectLight.specular = Unity_GlossyEnvironment(UNITY_PASS_TEXCUBE(unity_SpecCube0), unity_SpecCube0_HDR, envData);
 	#endif
 
 	return indirectLight;
