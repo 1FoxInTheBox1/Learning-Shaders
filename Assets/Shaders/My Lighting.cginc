@@ -7,12 +7,19 @@
 float4 _Tint;
 sampler2D _MainTex;
 float4 _MainTex_ST;
+
 sampler2D _DetailTex;
 float4 _DetailTex_ST;
+
 sampler2D _NormalMap, _DetailNormalMap;
 float _BumpScale, _DetailBumpScale;
+
+sampler2D _MetallicMap;
 float _Metallic;
 float _Smoothness;
+
+sampler2D _EmissionMap;
+float3 _Emission;
 
 struct Interpolators {
 	float4 pos : SV_POSITION;
@@ -41,6 +48,36 @@ struct VertexData {
 	float4 tangent : TANGENT;
 	float2 uv : TEXCOORD0;
 	};
+
+float GetMetallic (Interpolators i) {
+	#if defined(_METALLIC_MAP)
+		return tex2D(_MetallicMap, i.uv.xy).r;
+	#else
+		return _Metallic;
+	#endif
+	}
+
+float GetSmoothness (Interpolators i) {
+	float smoothness = 1;
+	#if defined(_SMOOTHNESS_ALBEDO)
+		smoothness = tex2D(_MainTex, i.uv.xy).a;
+	#elif defined(_SMOOTHNESS_METALLIC) && defined(_METALLIC_MAP)
+		smoothness = tex2D(_MetallicMap, i.uv.xy).a;
+	#endif
+	return smoothness * _Smoothness;
+	}
+
+float3 GetEmission (Interpolators i) {
+	#if defined(FORWARD_BASE_PASS)
+		#if defined(_EMISSION_MAP)
+			return tex2D(_EmissionMap, i.uv.xy) * _Emission;
+		#else
+			return _Emission;
+		#endif
+	#else
+		return 0;
+	#endif
+}
 
 float3 CreateBinormal (float3 normal, float3 tangent, float binormalSign) {
 	return cross(normal, tangent.xyz) * (binormalSign * unity_WorldTransformParams.w);
@@ -123,7 +160,7 @@ UnityIndirect CreateIndirectLight (Interpolators i, float3 viewDir) {
 		indirectLight.diffuse += max(0, ShadeSH9(float4(i.normal, 1)));
 		float3 reflectionDir = reflect(-viewDir, i.normal);
 		Unity_GlossyEnvironmentData envData;
-		envData.roughness = 1 - _Smoothness;
+		envData.roughness = 1 - GetSmoothness(i);
 		envData.reflUVW = BoxProjection(
 			reflectionDir, i.worldPos,
 			unity_SpecCube0_ProbePosition,
@@ -178,9 +215,11 @@ float4 MyFragmentProgram (Interpolators i) : SV_TARGET {
 		albedo *= tex2D(_DetailTex, i.uv.zw) * unity_ColorSpaceDouble;
 		float3 specularTint;
 		float oneMinusReflectivity;
-		albedo = DiffuseAndSpecularFromMetallic(albedo, _Metallic, specularTint, oneMinusReflectivity);
+		albedo = DiffuseAndSpecularFromMetallic(albedo, GetMetallic(i), specularTint, oneMinusReflectivity);
 
-		return UNITY_BRDF_PBS(albedo, specularTint, oneMinusReflectivity, _Smoothness, i.normal, viewDir, CreateLight(i), CreateIndirectLight(i, viewDir));
+		float4 color = UNITY_BRDF_PBS(albedo, specularTint, oneMinusReflectivity, GetSmoothness(i), i.normal, viewDir, CreateLight(i), CreateIndirectLight(i, viewDir));
+		color.rgb += GetEmission(i);
+		return color;
 	}
 
 #endif
