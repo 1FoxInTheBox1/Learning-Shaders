@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -50,7 +51,9 @@ public class MyLightingShaderGUI : ShaderGUI
         editor.TexturePropertySingleLine(MakeLabel(mainTex, "Albedo (RGB)"), mainTex, FindProperty("_Tint"));
         DoMetallic();
         DoSmoothness();
+        DoOcclusion();
         DoEmission();
+        DoDetailMask();
         DoNormals();
         editor.TextureScaleOffsetProperty(mainTex);
     }
@@ -90,6 +93,20 @@ public class MyLightingShaderGUI : ShaderGUI
         EditorGUI.indentLevel -= 3;
     }
 
+    void DoOcclusion()
+    {
+        MaterialProperty map = FindProperty("_OcclusionMap");
+        EditorGUI.BeginChangeCheck();
+        editor.TexturePropertySingleLine(
+            MakeLabel(map, "Occlusion (G)"), map,
+            map.textureValue ? FindProperty("_OcclusionStrength") : null
+        );
+        if (EditorGUI.EndChangeCheck())
+        {
+            SetKeyword("_OCCLUSION_MAP", map.textureValue);
+        }
+    }
+
     void DoEmission()
     {
         MaterialProperty map = FindProperty("_EmissionMap");
@@ -98,6 +115,19 @@ public class MyLightingShaderGUI : ShaderGUI
         if (EditorGUI.EndChangeCheck())
         {
             SetKeyword("_EMISSION_MAP", map.textureValue);
+        }
+    }
+
+    void DoDetailMask()
+    {
+        MaterialProperty mask = FindProperty("_DetailMask");
+        EditorGUI.BeginChangeCheck();
+        editor.TexturePropertySingleLine(
+            MakeLabel(mask, "Detail Mask (A)"), mask
+        );
+        if (EditorGUI.EndChangeCheck())
+        {
+            SetKeyword("_DETAIL_MASK", mask.textureValue);
         }
     }
 
