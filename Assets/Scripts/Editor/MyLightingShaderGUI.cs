@@ -61,9 +61,10 @@ public class MyLightingShaderGUI : ShaderGUI
     void DoMetallic()
     {
         MaterialProperty map = FindProperty("_MetallicMap");
+        Texture tex = map.textureValue;
         EditorGUI.BeginChangeCheck();
-        editor.TexturePropertySingleLine(MakeLabel(map, "Metallic (R)"), map, map.textureValue ? null : FindProperty("_Metallic"));
-        if (EditorGUI.EndChangeCheck())
+        editor.TexturePropertySingleLine(MakeLabel(map, "Metallic (R)"), map, tex ? null : FindProperty("_Metallic"));
+        if (EditorGUI.EndChangeCheck() && tex != map.textureValue)
         {
             SetKeyword("_METALLIC_MAP", map.textureValue);
         }
@@ -96,12 +97,10 @@ public class MyLightingShaderGUI : ShaderGUI
     void DoOcclusion()
     {
         MaterialProperty map = FindProperty("_OcclusionMap");
+        Texture tex = map.textureValue;
         EditorGUI.BeginChangeCheck();
-        editor.TexturePropertySingleLine(
-            MakeLabel(map, "Occlusion (G)"), map,
-            map.textureValue ? FindProperty("_OcclusionStrength") : null
-        );
-        if (EditorGUI.EndChangeCheck())
+        editor.TexturePropertySingleLine(MakeLabel(map, "Occlusion (G)"), map, tex ? FindProperty("_OcclusionStrength") : null);
+        if (EditorGUI.EndChangeCheck() && tex != map.textureValue)
         {
             SetKeyword("_OCCLUSION_MAP", map.textureValue);
         }
@@ -110,9 +109,10 @@ public class MyLightingShaderGUI : ShaderGUI
     void DoEmission()
     {
         MaterialProperty map = FindProperty("_EmissionMap");
+        Texture tex = map.textureValue;
         EditorGUI.BeginChangeCheck();
-        editor.TexturePropertyWithHDRColor(MakeLabel("Emission (RGB)"), map, FindProperty("_Emission"), false);
-        if (EditorGUI.EndChangeCheck())
+        editor.TexturePropertyWithHDRColor(MakeLabel("Emission (RGB)"), map, tex ? FindProperty("_Emission") : null, false);
+        if (EditorGUI.EndChangeCheck() && tex != map.textureValue)
         {
             SetKeyword("_EMISSION_MAP", map.textureValue);
         }
@@ -134,9 +134,10 @@ public class MyLightingShaderGUI : ShaderGUI
     void DoNormals()
     {
         MaterialProperty map = FindProperty("_NormalMap");
+        Texture tex = map.textureValue;
         EditorGUI.BeginChangeCheck();
-        editor.TexturePropertySingleLine(MakeLabel(map), map, map.textureValue ? FindProperty("_BumpScale") : null);
-        if (EditorGUI.EndChangeCheck())
+        editor.TexturePropertySingleLine(MakeLabel(map), map, tex ? FindProperty("_BumpScale") : null);
+        if (EditorGUI.EndChangeCheck() && tex != map.textureValue)
         {
             SetKeyword("_NORMAL_MAP", map.textureValue);
         }
@@ -160,9 +161,10 @@ public class MyLightingShaderGUI : ShaderGUI
     void DoSecondaryNormals()
     {
         MaterialProperty map = FindProperty("_DetailNormalMap");
+        Texture tex = map.textureValue;
         EditorGUI.BeginChangeCheck();
-        editor.TexturePropertySingleLine(MakeLabel(map), map, map.textureValue ? FindProperty("_DetailBumpScale") : null);
-        if (EditorGUI.EndChangeCheck())
+        editor.TexturePropertySingleLine(MakeLabel(map), map, tex ? FindProperty("_DetailBumpScale") : null);
+        if (EditorGUI.EndChangeCheck() && tex != map.textureValue)
         {
             SetKeyword("_DETAIL_NORMAL_MAP", map.textureValue);
         }
@@ -177,10 +179,16 @@ public class MyLightingShaderGUI : ShaderGUI
     {
         if (state)
         {
-            target.EnableKeyword(keyword);
+            foreach (Material m in editor.targets)
+            {
+                m.EnableKeyword(keyword);
+            }
         } else
         {
-            target.DisableKeyword(keyword);
+            foreach (Material m in editor.targets)
+            {
+                m.DisableKeyword(keyword);
+            }
         }
     }
 
